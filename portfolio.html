@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a18;
+    --ink-muted: #6b6b66;
+    --ink-faint: #a8a8a2;
+    --paper: #f5f3ee;
+    --paper-warm: #ede9e0;
+    --accent: #2d5a3d;
+    --accent-light: #4a8c62;
+    --accent-pale: #e8f0eb;
+    --rule: #d4d0c8;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'Noto Sans TC', sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(245, 243, 238, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-logo { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.08em; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+  .hero-left {
+    padding: 5rem 3rem 5rem 3rem;
+    display: flex; flex-direction: column; justify-content: center;
+    border-right: 1px solid var(--rule);
+  }
+  .hero-tag {
+    font-family: var(--mono); font-size: 11px; color: var(--accent);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hero-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+  h1 {
+    font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
+    margin-bottom: 1.5rem; color: var(--ink);
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .hero-desc {
+    font-size: 15px; color: var(--ink-muted); line-height: 1.8;
+    max-width: 420px; margin-bottom: 2.5rem;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 24px;
+    background: var(--accent); color: #fff;
+    font-size: 13px; font-family: var(--mono);
+    letter-spacing: 0.06em; text-decoration: none;
+    border: none; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .hero-cta:hover { background: var(--accent-light); }
+  .hero-right {
+    padding: 5rem 3rem;
+    display: flex; flex-direction: column; justify-content: center; gap: 2rem;
+  }
+  .stat-block { border-left: 2px solid var(--accent); padding-left: 1.25rem; }
+  .stat-num { font-family: var(--serif); font-size: 2.4rem; color: var(--accent); line-height: 1; }
+  .stat-label { font-size: 12px; color: var(--ink-muted); margin-top: 4px; letter-spacing: 0.04em; }
+
+  /* SECTION BASE */
+  section { padding: 6rem 3rem; }
+  .section-tag {
+    font-family: var(--mono); font-size: 11px; color: var(--ink-faint);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  h2 {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400; line-height: 1.15; letter-spacing: -0.01em;
+    margin-bottom: 3rem;
+  }
+
+  /* SKILLS */
+  .skills-section { background: var(--paper-warm); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 2rem; }
+  .skill-cell {
+    background: var(--paper);
+    padding: 1.5rem;
+    border: 1px solid var(--rule);
+  }
+  .skill-cell-title { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 12px; padding: 3px 10px;
+    background: var(--accent-pale); color: var(--accent);
+    border: 1px solid #c5d9cb;
+    font-family: var(--mono);
+  }
+
+  /* PROJECT */
+  .project-section { max-width: 1100px; margin: 0 auto; }
+  .project-card {
+    border: 1px solid var(--rule);
+    margin-bottom: 2px;
+    overflow: hidden;
+  }
+  .project-header {
+    display: grid; grid-template-columns: 1fr auto;
+    padding: 2rem 2.5rem;
+    cursor: pointer;
+    background: var(--paper);
+    transition: background 0.2s;
+    gap: 1rem; align-items: start;
+  }
+  .project-header:hover { background: var(--paper-warm); }
+  .project-num { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); margin-bottom: 0.5rem; }
+  .project-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .project-subtitle { font-size: 13px; color: var(--ink-muted); }
+  .project-arrow { font-size: 18px; color: var(--ink-faint); transition: transform 0.3s; padding-top: 4px; }
+  .project-card.open .project-arrow { transform: rotate(45deg); }
+  .project-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: var(--paper-warm);
+    border-top: 1px solid var(--rule);
+  }
+  .project-card.open .project-body { max-height: 1200px; }
+  .project-inner { padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+  .detail-block { margin-bottom: 1.5rem; }
+  .detail-label { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .detail-text { font-size: 14px; color: var(--ink); line-height: 1.7; }
+
+  .metric-row { display: flex; gap: 2rem; margin: 1.5rem 0; }
+  .metric { text-align: center; }
+  .metric-val { font-family: var(--serif); font-size: 2rem; color: var(--accent); }
+  .metric-desc { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
+
+  .finding-list { list-style: none; }
+  .finding-list li {
+    font-size: 14px; line-height: 1.7; padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 10px;
+  }
+  .finding-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+
+  .tool-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.5rem; }
+
+  /* ABOUT */
+  .about-section { border-top: 1px solid var(--rule); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 900px; }
+  .about-text { font-size: 15px; color: var(--ink-muted); line-height: 1.9; }
+  .contact-link {
+    display: block; font-family: var(--mono); font-size: 13px;
+    color: var(--accent); text-decoration: none; padding: 0.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    transition: padding-left 0.2s;
+  }
+  .contact-link:hover { padding-left: 8px; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 2rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-text { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; }
+
+  /* FADE IN */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 1.5rem 2rem; border-right: none; border-bottom: 1px solid var(--rule); }
+    .hero-right { padding: 2rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .project-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">portfolio.v1</div>
+  <div class="nav-links">
+    <a href="#projects">專案</a>
+    <a href="#skills">技能</a>
+    <a href="#about">關於</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Data Analyst · Business Intelligence</div>
+    <h1>用數據<br><em>說清楚</em><br>商業問題</h1>
+    <p class="hero-desc">
+      研究方法訓練背景，擅長將複雜資料結構化，
+      以 RFM 分群、視覺化報表、數據敘事
+      轉化為可執行的商業洞察。
+    </p>
+    <a href="#projects" class="hero-cta">查看專案 ↓</a>
+  </div>
+  <div class="hero-right fade-in">
+    <div class="stat-block">
+      <div class="stat-num">440K+</div>
+      <div class="stat-label">分析過的會員資料筆數</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">NT$944M</div>
+      <div class="stat-label">覆蓋總營收規模</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">NT$63M</div>
+      <div class="stat-label">提案可挽回年營收</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">3</div>
+      <div class="stat-label">分析工具：Power BI · MySQL · R</div>
+    </div>
+  </div>
+</div>
+
+<section id="skills" class="skills-section fade-in">
+  <div class="section-tag">01 — Skills</div>
+  <h2>技能組合</h2>
+  <div class="skills-grid">
+    <div class="skill-cell">
+      <div class="skill-cell-title">資料處理</div>
+      <div class="skill-tags">
+        <span class="tag">MySQL</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">R</span>
+        <span class="tag">CSV 整合</span>
+        <span class="tag">資料清洗</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-cell-title">視覺化與報告</div>
+      <div class="skill-tags">
+        <span class="tag">Power BI</span>
+        <span class="tag">Dashboard</span>
+        <span class="tag">數據敘事</span>
+        <span class="tag">簡報設計</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-cell-title">分析方法</div>
+      <div class="skill-tags">
+        <span class="tag">RFM 模型</span>
+        <span class="tag">客戶分群</span>
+        <span class="tag">流失預測</span>
+        <span class="tag">研究設計</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="padding: 6rem 3rem;">
+  <div class="section-tag">02 — Projects</div>
+  <h2>分析專案</h2>
+
+  <div class="project-card" id="proj1">
+    <div class="project-header" onclick="toggleProject('proj1')">
+      <div>
+        <div class="project-num">PROJECT 01 · 2025</div>
+        <div class="project-title">喚醒高價值客群與流失預警</div>
+        <div class="project-subtitle">會員 RFM 模型分析 · 440,206 筆消費紀錄 · Power BI</div>
+      </div>
+      <div class="project-arrow">+</div>
+    </div>
+    <div class="project-body">
+      <div class="project-inner">
+        <div>
+          <div class="detail-block">
+            <div class="detail-label">問題定義</div>
+            <div class="detail-text">
+              電商會員平台面臨客戶結構失衡：16% 客戶已流失、22% 高價值客戶陷入沉睡。
+              核心問題是如何在龐大會員基數中，識別值得搶救的高價值客群並設計對應的挽回策略。
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">方法與工具</div>
+            <div class="tool-list">
+              <span class="tag">Power BI</span>
+              <span class="tag">Power Query</span>
+              <span class="tag">RFM 模型</span>
+              <span class="tag">百分位排名</span>
+              <span class="tag">22 份 CSV 合併</span>
+            </div>
+            <div class="detail-text" style="margin-top: 0.75rem;">
+              合併 22 份 CSV 訂單資料，清洗 44 萬筆會員紀錄，建立 RFM 三維評分系統（Recency、Frequency、Monetary），
+              依百分位排名將客戶分為 8 種行為群體，識別高價值沉睡客戶。
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="metric-row">
+            <div class="metric">
+              <div class="metric-val">61%</div>
+              <div class="metric-desc">客戶處於流失或沉睡</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">55K</div>
+              <div class="metric-desc">高價值沉睡客戶人數</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">400</div>
+              <div class="metric-desc">平均沉睡天數</div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">關鍵洞察與行動建議</div>
+            <ul class="finding-list">
+              <li>5.5 萬名高價值客戶平均 400 天未回購，若流失年損 2 億新台幣</li>
+              <li>設計三階段挽回計畫：181–270 天（折扣券）、271–365 天（25% 折扣 / 贈品）、366 天以上（低成本自動化信）</li>
+              <li>三階段預估可挽回 16,358 名客戶，年增營收 NT$6,300 萬</li>
+              <li>建議優先集中資源於 181–270 天群體，ROI 最高</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section id="about" class="about-section fade-in">
+  <div class="section-tag">03 — About</div>
+  <h2>關於我</h2>
+  <div class="about-grid">
+    <div>
+      <p class="about-text">
+        歷史系出身，碩士專攻考古學，論文研究涉及碳氧、碳氮同位素分析——在那之前，我沒想過自己會喜歡跟數字打交道。
+      </p>
+      <p class="about-text" style="margin-top: 1rem;">
+        但從操作質譜儀、解讀同位素數值、到獨立撰寫研究報告，我發現自己真正在意的，是從雜亂的資料裡找出一個說得通的結論。這個習慣帶著我從古代遺址走進商業數據：用 RFM 模型分群 44 萬筆會員、用 Power BI 把數字變成老闆看得懂的圖——本質上做的是同一件事。
+      </p>
+      <p class="about-text" style="margin-top: 1rem;">
+        現在正透過實作專案累積數據分析能力——包括參加數據學習營完成的 RFM 會員分析——尋找 B2B 科技業的 Data Analyst 或 Business Analyst 入門機會，希望在有結構、重邏輯的環境裡做有意義的分析工作。
+      </p>
+    </div>
+    <div>
+      <div class="detail-label" style="margin-bottom: 0.75rem;">聯絡方式</div>
+      <a href="mailto:jin19956002@gmail.com" class="contact-link">jin19956002@gmail.com</a>
+      <a href="https://www.linkedin.com/feed/" class="contact-link" target="_blank">LinkedIn</a>
+      <a href="https://github.com/6002-boop" class="contact-link" target="_blank">github.com/6002-boop</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-text">© 2025 · Data Analyst Portfolio</div>
+  <div class="footer-text">Built with HTML · Hosted on GitHub Pages</div>
+</footer>
+
+<script>
+  function toggleProject(id) {
+    const card = document.getElementById(id);
+    card.classList.toggle('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
