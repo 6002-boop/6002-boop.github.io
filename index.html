@@ -34,7 +34,6 @@
     font-size: 16px;
   }
 
-  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
@@ -48,7 +47,6 @@
   .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: grid;
@@ -95,7 +93,6 @@
   .stat-num { font-family: var(--serif); font-size: 2.4rem; color: var(--accent); line-height: 1; }
   .stat-label { font-size: 12px; color: var(--ink-muted); margin-top: 4px; letter-spacing: 0.04em; }
 
-  /* SECTION BASE */
   section { padding: 6rem 3rem; }
   .section-tag {
     font-family: var(--mono); font-size: 11px; color: var(--ink-faint);
@@ -108,7 +105,6 @@
     margin-bottom: 3rem;
   }
 
-  /* SKILLS */
   .skills-section { background: var(--paper-warm); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 2rem; }
   .skill-cell {
@@ -125,7 +121,6 @@
     font-family: var(--mono);
   }
 
-  /* PROJECT */
   .project-section { max-width: 1100px; margin: 0 auto; }
   .project-card {
     border: 1px solid var(--rule);
@@ -148,18 +143,18 @@
   .project-card.open .project-arrow { transform: rotate(45deg); }
   .project-body {
     max-height: 0; overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.6s ease;
     background: var(--paper-warm);
     border-top: 1px solid var(--rule);
   }
-  .project-card.open .project-body { max-height: 1200px; }
+  .project-card.open .project-body { max-height: 2000px; }
   .project-inner { padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 
   .detail-block { margin-bottom: 1.5rem; }
   .detail-label { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
   .detail-text { font-size: 14px; color: var(--ink); line-height: 1.7; }
 
-  .metric-row { display: flex; gap: 2rem; margin: 1.5rem 0; }
+  .metric-row { display: flex; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; }
   .metric { text-align: center; }
   .metric-val { font-family: var(--serif); font-size: 2rem; color: var(--accent); }
   .metric-desc { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
@@ -174,7 +169,19 @@
 
   .tool-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.5rem; }
 
-  /* ABOUT */
+  .project-links { display: flex; gap: 12px; margin-top: 1.5rem; flex-wrap: wrap; }
+  .project-link {
+    font-family: var(--mono); font-size: 12px;
+    padding: 8px 16px;
+    border: 1px solid var(--accent);
+    color: var(--accent); text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.04em;
+  }
+  .project-link:hover { background: var(--accent); color: #fff; }
+  .project-link.primary { background: var(--accent); color: #fff; }
+  .project-link.primary:hover { background: var(--accent-light); }
+
   .about-section { border-top: 1px solid var(--rule); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 900px; }
   .about-text { font-size: 15px; color: var(--ink-muted); line-height: 1.9; }
@@ -186,7 +193,6 @@
   }
   .contact-link:hover { padding-left: 8px; }
 
-  /* FOOTER */
   footer {
     border-top: 1px solid var(--rule);
     padding: 2rem 3rem;
@@ -194,7 +200,6 @@
   }
   .footer-text { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; }
 
-  /* FADE IN */
   .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-in.visible { opacity: 1; transform: none; }
 
@@ -236,20 +241,16 @@
   </div>
   <div class="hero-right fade-in">
     <div class="stat-block">
-      <div class="stat-num">440K+</div>
-      <div class="stat-label">分析過的會員資料筆數</div>
-    </div>
-    <div class="stat-block">
-      <div class="stat-num">NT$944M</div>
-      <div class="stat-label">覆蓋總營收規模</div>
-    </div>
-    <div class="stat-block">
       <div class="stat-num">NT$63M</div>
-      <div class="stat-label">提案可挽回年營收</div>
+      <div class="stat-label">提案可挽回年營收（RFM 分析）</div>
     </div>
     <div class="stat-block">
-      <div class="stat-num">3</div>
-      <div class="stat-label">分析工具：Power BI · MySQL · R</div>
+      <div class="stat-num">34x</div>
+      <div class="stat-label">美國 vs 中國營收成長差距（FY2022–2026）</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">2</div>
+      <div class="stat-label">完整專案：消費者行為 × 產業供應鏈</div>
     </div>
   </div>
 </div>
@@ -263,6 +264,7 @@
       <div class="skill-tags">
         <span class="tag">MySQL</span>
         <span class="tag">Power Query</span>
+        <span class="tag">Python</span>
         <span class="tag">R</span>
         <span class="tag">CSV 整合</span>
         <span class="tag">資料清洗</span>
@@ -272,6 +274,7 @@
       <div class="skill-cell-title">視覺化與報告</div>
       <div class="skill-tags">
         <span class="tag">Power BI</span>
+        <span class="tag">matplotlib</span>
         <span class="tag">Dashboard</span>
         <span class="tag">數據敘事</span>
         <span class="tag">簡報設計</span>
@@ -283,7 +286,8 @@
         <span class="tag">RFM 模型</span>
         <span class="tag">客戶分群</span>
         <span class="tag">流失預測</span>
-        <span class="tag">研究設計</span>
+        <span class="tag">財報分析</span>
+        <span class="tag">供應鏈研究</span>
       </div>
     </div>
   </div>
@@ -293,6 +297,7 @@
   <div class="section-tag">02 — Projects</div>
   <h2>分析專案</h2>
 
+  <!-- PROJECT 01 -->
   <div class="project-card" id="proj1">
     <div class="project-header" onclick="toggleProject('proj1')">
       <div>
@@ -356,6 +361,84 @@
     </div>
   </div>
 
+  <!-- PROJECT 02 -->
+  <div class="project-card" id="proj2">
+    <div class="project-header" onclick="toggleProject('proj2')">
+      <div>
+        <div class="project-num">PROJECT 02 · 2026</div>
+        <div class="project-title">AI 算力供應鏈分析：輝達去中國化的數據軌跡</div>
+        <div class="project-subtitle">NVIDIA 10-K 財報分析 · FY2016–FY2026 · MySQL · Python</div>
+      </div>
+      <div class="project-arrow">+</div>
+    </div>
+    <div class="project-body">
+      <div class="project-inner">
+        <div>
+          <div class="detail-block">
+            <div class="detail-label">研究問題</div>
+            <div class="detail-text">
+              中國禁止購入輝達晶片，會對輝達業務造成嚴重衝擊嗎？
+              從 FY2016 到 FY2026 的完整 10-K 財報數據，追蹤這場地緣政治衝擊的真實影響，
+              並沿著供應鏈向下追蹤台積電、HBM 記憶體、設備商的連動關係。
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">方法與工具</div>
+            <div class="tool-list">
+              <span class="tag">MySQL</span>
+              <span class="tag">Python</span>
+              <span class="tag">Google Colab</span>
+              <span class="tag">matplotlib</span>
+              <span class="tag">NVIDIA 10-K</span>
+            </div>
+            <div class="detail-text" style="margin-top: 0.75rem;">
+              直接引用 NVIDIA 官方財報建立資料集，以 MySQL 進行多年度地區營收聚合與占比計算，
+              Python 產出三張視覺化圖表，並透過情境試算量化 HBM4 延遲對 Rubin 產線的營收影響。
+              報告草稿由 Claude 協助架構，最終排版由 Gemini 輔助完成。
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">數據說明</div>
+            <div class="detail-text">
+              FY2016–FY2025 採 Billing Location；FY2026 起改為 HQ Location，不可直接比較。
+              FY2017 數據經對照原始 10-K 修正（初版錯誤已記錄於 GitHub commit）。
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="metric-row">
+            <div class="metric">
+              <div class="metric-val">26.4%</div>
+              <div class="metric-desc">中國市占高點（FY2022）</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">9.1%</div>
+              <div class="metric-desc">中國市占現況（FY2026）</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">34x</div>
+              <div class="metric-desc">同期美國營收成長倍數</div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">關鍵洞察</div>
+            <ul class="finding-list">
+              <li>中國市占 FY2022 見頂後持續下滑，出口管制加速了一個已在進行中的結構轉移</li>
+              <li>中國絕對值成長 2.8x，美國成長 34x——同一數字的兩種故事，光看絕對值會誤判趨勢</li>
+              <li>FY27 Q2 財測 $910 億明示排除中國收入，去中國化不影響成長動能</li>
+              <li>台積電 CoWoS 良率 >98% 已解除封裝瓶頸；HBM4 認證延遲才是 Rubin 出貨的真正卡點</li>
+              <li>台灣在供應鏈賺加工費而非技術溢價，HBM 本體利潤留在韓廠</li>
+            </ul>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/6002-boop/nvidia-supply-chain-analysis" class="project-link primary" target="_blank">GitHub →</a>
+            <a href="https://github.com/6002-boop/nvidia-supply-chain-analysis/blob/main/report/AI_%E7%AE%97%E5%8A%9B%E4%BE%9B%E6%87%89%E9%8F%88%E5%88%86%E6%9E%90%E5%A0%B1%E5%91%8A_%E5%84%AA%E5%8C%96%E7%89%88.pdf" class="project-link" target="_blank">完整報告 PDF →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <section id="about" class="about-section fade-in">
@@ -364,20 +447,27 @@
   <div class="about-grid">
     <div>
       <p class="about-text">
-        歷史系出身，碩士專攻考古學，論文研究涉及碳氧、碳氮同位素分析——在那之前，沒想過自己會喜歡跟數字打交道。
+        歷史系出身，碩士專攻考古學，論文研究涉及碳氧、碳氮同位素分析——
+        在那之前，沒想過自己會喜歡跟數字打交道。
       </p>
       <p class="about-text" style="margin-top: 1rem;">
-        但從操作質譜儀、解讀同位素數值、到獨立撰寫研究報告，我發現自己真正在意的，是從雜亂的資料裡找出一個說得通的結論。這個習慣帶著我從史前遺址走進商業數據：用 RFM 模型分群 44 萬筆會員、用 Power BI 把數字變成老闆看得懂的圖——本質上做的是同一件事。
+        從操作質譜儀、解讀同位素數值、到獨立撰寫研究報告，
+        我發現自己真正在意的，是從雜亂的資料裡找出一個說得通的結論。
+        這個習慣帶著我從史前遺址走進商業數據：
+        用 RFM 模型分群 44 萬筆會員記錄，用 Power BI 把數字轉化為可執行的挽回策略；
+        再到每天閱讀科技財報，用 MySQL 和 Python 追蹤輝達十年供應鏈的結構轉移——
+        本質上做的是同一件事：讓數字說出一個說得通的故事。
       </p>
       <p class="about-text" style="margin-top: 1rem;">
-        現在正透過實作專案累積數據分析能力——包括參加數據分析學習營完成的 RFM 會員分析——尋找 B2B 科技業的 Data Analyst 或 Business Analyst 入門機會，希望在有結構、重邏輯的環境裡做有意義的分析工作。
+        目前透過持續的自主專案深化分析能力，涵蓋消費者行為分析與產業供應鏈研究兩個方向，
+        尋找 B2B 科技業的 Data Analyst 或 Business Analyst 入門機會。
       </p>
     </div>
     <div>
       <div class="detail-label" style="margin-bottom: 0.75rem;">聯絡方式</div>
       <a href="mailto:jin19956002@gmail.com" class="contact-link">jin19956002@gmail.com</a>
       <a href="https://www.linkedin.com/in/yi-chien-hsu-526674324" class="contact-link" target="_blank">LinkedIn</a>
-      </div>
+    </div>
   </div>
 </section>
 
