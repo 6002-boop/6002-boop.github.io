@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Data Analyst</title>
+<title>Yi-Chien Hsu | Data & Business Analyst Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,7 +42,7 @@
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--rule);
   }
-  .nav-logo { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.08em; }
+  .nav-logo { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
   .nav-links { display: flex; gap: 2rem; }
   .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
@@ -54,7 +54,7 @@
     padding-top: 80px;
   }
   .hero-left {
-    padding: 5rem 3rem 5rem 3rem;
+    padding: 5rem 3rem;
     display: flex; flex-direction: column; justify-content: center;
     border-right: 1px solid var(--rule);
   }
@@ -66,14 +66,14 @@
   }
   .hero-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
   h1 {
-    font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.5rem);
-    font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
+    font-family: var(--serif); font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-weight: 400; line-height: 1.15; letter-spacing: -0.01em;
     margin-bottom: 1.5rem; color: var(--ink);
   }
   h1 em { font-style: italic; color: var(--accent); }
   .hero-desc {
-    font-size: 15px; color: var(--ink-muted); line-height: 1.8;
-    max-width: 420px; margin-bottom: 2.5rem;
+    font-size: 14px; color: var(--ink-muted); line-height: 1.8;
+    max-width: 450px; margin-bottom: 2.5rem;
   }
   .hero-cta {
     display: inline-flex; align-items: center; gap: 10px;
@@ -184,7 +184,7 @@
 
   .about-section { border-top: 1px solid var(--rule); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 900px; }
-  .about-text { font-size: 15px; color: var(--ink-muted); line-height: 1.9; }
+  .about-text { font-size: 14px; color: var(--ink-muted); line-height: 1.8; }
   .contact-link {
     display: block; font-family: var(--mono); font-size: 13px;
     color: var(--accent); text-decoration: none; padding: 0.5rem 0;
@@ -220,90 +220,89 @@
 <body>
 
 <nav>
-  <div class="nav-logo">portfolio.v1</div>
+  <div class="nav-logo">Yi-Chien Hsu · Data Portfolio</div>
   <div class="nav-links">
-    <a href="#projects">專案</a>
-    <a href="#skills">技能</a>
-    <a href="#about">關於</a>
+    <a href="#projects">分析專案</a>
+    <a href="#skills">核心技能</a>
+    <a href="#about">關於我</a>
   </div>
 </nav>
 
 <div class="hero">
   <div class="hero-left">
-    <div class="hero-tag">Data Analyst · Business Intelligence</div>
-    <h1>用數據<br><em>說清楚</em><br>商業問題</h1>
+    <div class="hero-tag">Business Intelligence · Market Analyst</div>
+    <h1>結合數據邏輯<br>與<em>產業鏈結構</em><br>的商務分析</h1>
     <p class="hero-desc">
-      研究方法訓練背景，擅長將複雜資料結構化，
-      以 RFM 分群、視覺化報表、數據敘事
-      轉化為可執行的商業洞察。
+      具備學術研究方法與定量分析訓練背景。擅長將多元、跨年度的半導體財報與市場營運數據結構化，並利用生成式 AI 作為技術特助建立高效分析工作流，協助原廠策略部門與外商進行定量決策評估。
     </p>
     <a href="#projects" class="hero-cta">查看專案 ↓</a>
   </div>
   <div class="hero-right fade-in">
     <div class="stat-block">
       <div class="stat-num">NT$63M</div>
-      <div class="stat-label">提案可挽回年營收（RFM 分析）</div>
+      <div class="stat-label">客戶分群專案預估可挽回年營收</div>
     </div>
     <div class="stat-block">
-      <div class="stat-num">34x</div>
-      <div class="stat-label">美國 vs 中國營收成長差距（FY2022–2026）</div>
+      <div class="stat-num">9.1%</div>
+      <div class="stat-label">NVIDIA 中國市場營收佔比 (FY2026)</div>
     </div>
     <div class="stat-block">
-      <div class="stat-num">2</div>
-      <div class="stat-label">完整專案：消費者行為 × 產業供應鏈</div>
+      <div class="stat-num">-25%</div>
+      <div class="stat-label">HBM4 供應延遲對次世代晶片預估產量影響幅</div>
     </div>
   </div>
 </div>
 
 <section id="skills" class="skills-section fade-in">
-  <div class="section-tag">01 — Skills</div>
-  <h2>技能組合</h2>
+  <div class="section-tag">01 — Skills & Tools</div>
+  <h2>技能矩陣與工作流</h2>
   <div class="skills-grid">
     <div class="skill-cell">
-      <div class="skill-cell-title">資料處理</div>
+      <div class="skill-cell-title">資料處理與清洗</div>
       <div class="skill-tags">
-        <span class="tag">MySQL</span>
+        <span class="tag">MySQL 資料庫</span>
+        <span class="tag">Python (Pandas)</span>
+        <span class="tag">Excel (樞紐/函式)</span>
         <span class="tag">Power Query</span>
-        <span class="tag">Python</span>
-        <span class="tag">R</span>
-        <span class="tag">CSV 整合</span>
-        <span class="tag">資料清洗</span>
+        <span class="tag">多源 CSV 整合</span>
+        <span class="tag">AI 輔助語法開發</span>
       </div>
     </div>
     <div class="skill-cell">
-      <div class="skill-cell-title">視覺化與報告</div>
+      <div class="skill-cell-title">商業視覺化</div>
       <div class="skill-tags">
-        <span class="tag">Power BI</span>
+        <span class="tag">Power BI 看板</span>
+        <span class="tag">Tableau 互動圖表</span>
         <span class="tag">matplotlib</span>
-        <span class="tag">Dashboard</span>
+        <span class="tag">商業簡報設計</span>
         <span class="tag">數據敘事</span>
-        <span class="tag">簡報設計</span>
+        <span class="tag">指標架構建立</span>
       </div>
     </div>
     <div class="skill-cell">
-      <div class="skill-cell-title">分析方法</div>
+      <div class="skill-cell-title">分析思維與領域知識</div>
       <div class="skill-tags">
-        <span class="tag">RFM 模型</span>
-        <span class="tag">客戶分群</span>
-        <span class="tag">流失預測</span>
-        <span class="tag">財報分析</span>
-        <span class="tag">供應鏈研究</span>
+        <span class="tag">RFM 客戶分群</span>
+        <span class="tag">半導體與 AI 供應鏈</span>
+        <span class="tag">10-K 財報解讀</span>
+        <span class="tag">地緣政治風險量化</span>
+        <span class="tag">情境與敏感度分析</span>
+        <span class="tag">學術定量研究方法</span>
       </div>
     </div>
   </div>
 </section>
 
 <section id="projects" style="padding: 6rem 3rem;">
-  <div class="section-tag">02 — Projects</div>
-  <h2>分析專案</h2>
+  <div class="section-tag">02 — Case Studies</div>
+  <h2>專案實踐</h2>
 
-  <!-- PROJECT 01 -->
   <div class="project-card" id="proj1">
     <div class="project-header" onclick="toggleProject('proj1')">
       <div>
-        <div class="project-num">PROJECT 01 · 2025</div>
-        <div class="project-title">喚醒高價值客群與流失預警</div>
-        <div class="project-subtitle">會員 RFM 模型分析 · 440,206 筆消費紀錄 · Power BI</div>
+        <div class="project-num">PROJECT 01 · CONSUMER BEHAVIOR</div>
+        <div class="project-title">電商會員價值分群與流失預警模型</div>
+        <div class="project-subtitle">行為分析 · 440,206 筆消費紀錄處理 · Power BI 數據視覺化</div>
       </div>
       <div class="project-arrow">+</div>
     </div>
@@ -311,24 +310,21 @@
       <div class="project-inner">
         <div>
           <div class="detail-block">
-            <div class="detail-label">問題定義</div>
+            <div class="detail-label">商務背景與核心問題</div>
             <div class="detail-text">
-              電商會員平台面臨客戶結構失衡：16% 客戶已流失、22% 高價值客戶陷入沉睡。
-              核心問題是如何在龐大會員基數中，識別值得搶救的高價值客群並設計對應的挽回策略。
+              電商平台面臨客群結構鈍化問題：經初步檢視，約 16% 客戶已實質流失、22% 高價值核心客戶處於不活躍狀態。本專案旨在透過定量分析，識別具備高挽回價值的核心群體，並量化其對營收的潛在貢獻。
             </div>
           </div>
           <div class="detail-block">
-            <div class="detail-label">方法與工具</div>
+            <div class="detail-label">數據工程與方法論</div>
             <div class="tool-list">
-              <span class="tag">Power BI</span>
               <span class="tag">Power Query</span>
               <span class="tag">RFM 模型</span>
-              <span class="tag">百分位排名</span>
-              <span class="tag">22 份 CSV 合併</span>
+              <span class="tag">百分位排名 (Percentile)</span>
+              <span class="tag">多源 CSV 清洗與合併</span>
             </div>
             <div class="detail-text" style="margin-top: 0.75rem;">
-              合併 22 份 CSV 訂單資料，清洗 44 萬筆會員紀錄，建立 RFM 三維評分系統（Recency、Frequency、Monetary），
-              依百分位排名將客戶分為 8 種行為群體，識別高價值沉睡客戶。
+              運用 Power Query 清洗並合併 22 份跨區域銷售訂單資料，排除重複與格式異常。基於 Recency、Frequency、Monetary 行為指標建立三維分群，利用百分位算法將會員結構解構為 8 類行為群體，以精準鎖定目標受眾。
             </div>
           </div>
         </div>
@@ -336,24 +332,23 @@
           <div class="metric-row">
             <div class="metric">
               <div class="metric-val">61%</div>
-              <div class="metric-desc">客戶處於流失或沉睡</div>
+              <div class="metric-desc">整體會員處於沉睡或流失</div>
             </div>
             <div class="metric">
-              <div class="metric-val">55K</div>
+              <div class="metric-val">5.5萬</div>
               <div class="metric-desc">高價值沉睡客戶人數</div>
             </div>
             <div class="metric">
-              <div class="metric-val">400</div>
-              <div class="metric-desc">平均沉睡天數</div>
+              <div class="metric-val">NT$63M</div>
+              <div class="metric-desc">策略導入預估可挽回年營收</div>
             </div>
           </div>
           <div class="detail-block">
-            <div class="detail-label">關鍵洞察與行動建議</div>
+            <div class="detail-label">數據洞察與營運建議</div>
             <ul class="finding-list">
-              <li>5.5 萬名高價值客戶平均 400 天未回購，若流失年損 2 億新台幣</li>
-              <li>設計三階段挽回計畫：181–270 天（折扣券）、271–365 天（25% 折扣 / 贈品）、366 天以上（低成本自動化信）</li>
-              <li>三階段預估可挽回 16,358 名客戶，年增營收 NT$6,300 萬</li>
-              <li>建議優先集中資源於 181–270 天群體，ROI 最高</li>
+              <li>識別出 5.5 萬名核心高價值客戶，平均未回購天數達 400 天，若無即時干預，潛在營收流失風險高達每年 2 億新台幣。</li>
+              <li>提出分段式行銷介入規劃：針對 181-270 天沉睡者提供專屬優惠券（經評估此階段轉化 ROI 最高）；271-365天導入特定贈品誘因；366天以上採取自動化電子郵件喚醒。</li>
+              <li>根據歷史轉化率推估，該策略預計可有效挽回 16,358 名高價值會員，帶來約 NT$6,300 萬的營收回補。</li>
             </ul>
           </div>
         </div>
@@ -361,13 +356,12 @@
     </div>
   </div>
 
-  <!-- PROJECT 02 -->
   <div class="project-card" id="proj2">
     <div class="project-header" onclick="toggleProject('proj2')">
       <div>
-        <div class="project-num">PROJECT 02 · 2026</div>
-        <div class="project-title">AI 算力供應鏈分析：輝達去中國化的數據軌跡</div>
-        <div class="project-subtitle">NVIDIA 10-K 財報分析 · FY2016–FY2026 · MySQL · Python</div>
+        <div class="project-num">PROJECT 02 · MARKET INTELLIGENCE</div>
+        <div class="project-title">AI 算力供應鏈分析：NVIDIA 區域營收轉移與台廠元件商利潤結構研究</div>
+        <div class="project-subtitle">官方 10-K 財報定量分析 · FY2016–FY2026 十年軌跡追蹤 · MySQL · Python</div>
       </div>
       <div class="project-arrow">+</div>
     </div>
@@ -375,64 +369,50 @@
       <div class="project-inner">
         <div>
           <div class="detail-block">
-            <div class="detail-label">研究問題</div>
+            <div class="detail-label">研究問題與分析範疇</div>
             <div class="detail-text">
-              中國禁止購入輝達晶片，會對輝達業務造成嚴重衝擊嗎？
-              從 FY2016 到 FY2026 的完整 10-K 財報數據，追蹤這場地緣政治衝擊的真實影響，
-              並沿著供應鏈向下追蹤台積電、HBM 記憶體、設備商的連動關係。
+              本報告跳脫市場質化新聞的直覺推論，直接提取 NVIDIA 歷年原始 10-K 申報文件進行多年度定量分析，量化出口管制對其核心業務的真實衝擊。同時，沿著供應鏈向下解構台積電先進封裝（CoWoS）、韓廠高頻寬記憶體（HBM）與台灣高階被動元件廠商在此變局中的結構性利潤分配與定價權。
             </div>
           </div>
           <div class="detail-block">
-            <div class="detail-label">方法與工具</div>
+            <div class="detail-label">分析工作流（AI 協作與數據驗證）</div>
             <div class="tool-list">
-              <span class="tag">MySQL</span>
-              <span class="tag">Python</span>
-              <span class="tag">Google Colab</span>
-              <span class="tag">matplotlib</span>
-              <span class="tag">NVIDIA 10-K</span>
+              <span class="tag">MySQL 營收聚合</span>
+              <span class="tag">Python (matplotlib)</span>
+              <span class="tag">NVIDIA 10-K 數據庫</span>
+              <span class="tag">AI 語法協作開發</span>
             </div>
             <div class="detail-text" style="margin-top: 0.75rem;">
-              直接引用 NVIDIA 官方財報建立資料集，以 MySQL 進行多年度地區營收聚合與占比計算，
-              Python 產出三張視覺化圖表，並透過情境試算量化 HBM4 延遲對 Rubin 產線的營收影響。
-              報告草稿由 Claude 協助架構，最終排版由 Gemini 輔助完成。
-            </div>
-          </div>
-          <div class="detail-block">
-            <div class="detail-label">數據說明</div>
-            <div class="detail-text">
-              FY2016–FY2025 採 Billing Location；FY2026 起改為 HQ Location，不可直接比較。
-              FY2017 數據經對照原始 10-K 修正（初版錯誤已記錄於 GitHub commit）。
+              建立多年度官方財報資料集。在此專案中，我負責整體的「商業指標定義」與「多因子架構設計」，並透過 Prompt 工程導引生成式 AI 輔助產出 MySQL 提取與 Python 繪圖語法。在數據驗證階段，主動對照原始 10-K 會計報表，修正了初版因申報定義差異（Billing vs HQ Location）導致的 FY2017 誤差，確保資料具備跨年度的一致性。
             </div>
           </div>
         </div>
         <div>
           <div class="metric-row">
             <div class="metric">
-              <div class="metric-val">26.4%</div>
-              <div class="metric-desc">中國市占高點（FY2022）</div>
-            </div>
-            <div class="metric">
               <div class="metric-val">9.1%</div>
-              <div class="metric-desc">中國市占現況（FY2026）</div>
+              <div class="metric-desc">中國市場營收佔比新低 (FY26)</div>
             </div>
             <div class="metric">
               <div class="metric-val">34x</div>
-              <div class="metric-desc">同期美國營收成長倍數</div>
+              <div class="metric-desc">同期美國市場營收成長倍數</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">-25%</div>
+              <div class="metric-desc">HBM4 卡點致 Rubin 預估產量調幅</div>
             </div>
           </div>
           <div class="detail-block">
-            <div class="detail-label">關鍵洞察</div>
+            <div class="detail-label">核心商務洞察</div>
             <ul class="finding-list">
-              <li>中國市占 FY2022 見頂後持續下滑，出口管制加速了一個已在進行中的結構轉移</li>
-              <li>中國絕對值成長 2.8x，美國成長 34x——同一數字的兩種故事，光看絕對值會誤判趨勢</li>
-              <li>FY27 Q2 財測 $910 億明示排除中國收入，去中國化不影響成長動能</li>
-              <li>台積電 CoWoS 良率 >98% 已解除封裝瓶頸；HBM4 認證延遲才是 Rubin 出貨的真正卡點</li>
-              <li>台灣在供應鏈賺加工費而非技術溢價，HBM 本體利潤留在韓廠</li>
+              <li><strong>指標解讀的相對性：</strong> NVIDIA 中國市場營收佔比雖從 26.4% 降至 9.1%，但絕對金額實質成長 2.8x。主導整體業績的是北美四大 CSP 需求帶動的美國市場（同期暴增34x），完全補足並稀釋了中國市場份額。</li>
+              <li><strong>供應鏈瓶頸位移：</strong> 數據與市場調研顯示，台積電 CoWoS 封裝良率已穩定超越 98%，原封裝端瓶頸基本解鎖；當前實質風險已轉移至韓廠 HBM4 認證延遲。經情境敏感度分析（以 ASP $35,000 美元計），此技術延遲使次世代 Rubin 架構晶片年度預估產量面臨 25% 下修，屬於「營收遞延認列」，而非結構性衰退。</li>
+              <li><strong>被動元件廠之結構性優勢：</strong> 相比系統代工廠維持低毛利加工費、HBM 顆粒利潤集中於外商，台灣以國巨為首的<strong>高階被動元件（特殊 MLCC/高階電感）原廠</strong>，在 AI 伺服器對高頻、高壓、高可靠性的硬體硬指標要求下，具備較高的技術防禦壁壘。在去中國化浪潮下，中國廠商短期內難以通過高階規格認證，使台廠享有穩固的產品利潤與定價權。</li>
             </ul>
           </div>
           <div class="project-links">
-            <a href="https://github.com/6002-boop/nvidia-supply-chain-analysis" class="project-link primary" target="_blank">GitHub →</a>
-            <a href="https://github.com/6002-boop/nvidia-supply-chain-analysis/blob/main/report/AI_%E7%AE%97%E5%8A%9B%E4%BE%9B%E6%87%89%E9%8F%88%E5%88%86%E6%9E%90%E5%A0%B1%E5%91%8A_%E5%84%AA%E5%8C%96%E7%89%88.pdf" class="project-link" target="_blank">完整報告 PDF →</a>
+            <a href="https://github.com/6002-boop/nvidia-supply-chain-analysis" class="project-link primary" target="_blank">專案 GitHub 原始碼 →</a>
+            <a href="https://github.com/6002-boop/nvidia-supply-chain-analysis/blob/main/report/AI_%E7%AE%97%E5%8A%9B%E4%BE%9B%E6%87%89%E9%8F%88%E5%88%86%E6%9E%90%E5%A0%B1%E5%91%8A_%E5%84%AA%E5%8C%96%E7%89%88.pdf" class="project-link" target="_blank">產業深度 PDF 報告 →</a>
           </div>
         </div>
       </div>
@@ -442,25 +422,21 @@
 </section>
 
 <section id="about" class="about-section fade-in">
-  <div class="section-tag">03 — About</div>
-  <h2>關於我</h2>
+  <div class="section-tag">03 — Biography</div>
+  <h2>個人背景與分析核心</h2>
   <div class="about-grid">
     <div>
       <p class="about-text">
-        歷史系出身，碩士專攻考古學，論文研究涉及碳氧、碳氮同位素分析——
-        在那之前，沒想過自己會喜歡跟數字打交道。
+        我是許毅謙（Yi-Chien Hsu）。大學就讀歷史學系，碩士班主修考古學，在學期間曾深入接觸並操作碳氧、碳氮同位素的科學定量分析。
       </p>
       <p class="about-text" style="margin-top: 1rem;">
-        從操作質譜儀、解讀同位素數值、到獨立撰寫研究報告，
-        我發現自己真正在意的，是從雜亂的資料裡找出一個說得通的結論。
-        這個習慣帶著我從史前遺址走進商業數據：
-        用 RFM 模型分群 44 萬筆會員記錄，用 Power BI 把數字轉化為可執行的挽回策略；
-        再到每天閱讀科技財報，用 MySQL 和 Python 追蹤輝達十年供應鏈的結構轉移——
-        本質上做的是同一件事：讓數字說出一個說得通的故事。
+        這段學術背景培養了我對數據的嚴謹態度。考古定量研究的核心，是在高度不完整、無序的樣本與環境變數中，利用精密儀器輸出客觀數據，再透過邏輯交叉比對，推論出當時經濟與社會結構的真實軌跡。這與商業數據分析中，從凌亂的銷售日誌或複雜的跨國財報中提煉商務洞察，在邏輯本質上高度一致。
       </p>
       <p class="about-text" style="margin-top: 1rem;">
-        目前透過持續的自主專案深化分析能力，涵蓋消費者行為分析與產業供應鏈研究兩個方向，
-        尋找 B2B 科技業的 Data Analyst 或 Business Analyst 入門機會。
+        不論是在電商專案中透過 RFM 行為模型量化 44 萬筆會員的沉睡損失，還是在科技產業研究中藉由原始 10-K 申報文件追蹤 NVIDIA 去中國化的結構性位移與 HBM4 技術卡點，我的核心價值在於：<strong>「精確界定商務命題、維護數據一致性、並將其轉化為具備決策參考價值的量化建議。」</strong>
+      </p>
+      <p class="about-text" style="margin-top: 1rem;">
+        在技術實作上，我熟練運用生成式 AI 作為我的高效技術助手（Assistant-Driven Workflow），由我負責核心的「指標設計」與「問題拆解」，並透過精確的 Prompt Engineering 導引 AI 產出 SQL 與 Python 語法。我認為這能大幅降低語法編寫的重複性時間，使我能將 80% 的精力專注於數據背後的商業解讀。目前正積極尋找 B2B 科技原廠、品牌外商或第三方產業調研機構的 Data Analyst 或 Business Analyst 機會。
       </p>
     </div>
     <div>
@@ -472,7 +448,7 @@
 </section>
 
 <footer>
-  <div class="footer-text">© 2025 · Data Analyst Portfolio</div>
+  <div class="footer-text">© 2026 · Yi-Chien Hsu · Data Analyst Portfolio</div>
   <div class="footer-text">Built with HTML · Hosted on GitHub Pages</div>
 </footer>
 
